@@ -1,29 +1,29 @@
 {
-  "generated_at": "2026-03-18T17:06:22.696Z",
+  "generated_at": "2026-03-18T17:35:37.099Z",
   "files": [
     {
       "file": "occupations.json",
       "label": "JobOrBot v1 occupation dataset",
       "row_count": 342,
-      "bytes": 426223
+      "bytes": 283258
     },
     {
       "file": "karpathy_jobs_v1.json",
       "label": "Karpathy Jobs variant",
       "row_count": 342,
-      "bytes": 296749
+      "bytes": 267227
     },
     {
       "file": "anthropic_v1.json",
       "label": "Anthropic variant",
       "row_count": 342,
-      "bytes": 156775
+      "bytes": 163250
     },
     {
       "file": "microsoft_ai_v1.json",
       "label": "Microsoft AI variant",
       "row_count": 342,
-      "bytes": 211813
+      "bytes": 222309
     }
   ]
 }
