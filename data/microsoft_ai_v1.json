@@ -17,45 +17,6 @@
       "url": "https://arxiv.org/abs/2507.07935"
     }
   ],
-  "methodology": {
-    "raw_metric": "Microsoft AI applicability score",
-    "mapping": "Scores are mapped into JobOrBot's replaceability scale using conservative percentile bands from Microsoft's occupation-score distribution rather than linear max-normalization.",
-    "note": "Because the Microsoft source measures AI usefulness within occupational tasks, not end-to-end job replacement, this variant intentionally tops out at 8/10 rather than claiming any occupation is fully replaceable today.",
-    "bands": [
-      {
-        "percentile_band": "bottom 10%",
-        "exposure": 1
-      },
-      {
-        "percentile_band": "10th-25th percentile",
-        "exposure": 2
-      },
-      {
-        "percentile_band": "25th-45th percentile",
-        "exposure": 3
-      },
-      {
-        "percentile_band": "45th-70th percentile",
-        "exposure": 4
-      },
-      {
-        "percentile_band": "70th-85th percentile",
-        "exposure": 5
-      },
-      {
-        "percentile_band": "85th-95th percentile",
-        "exposure": 6
-      },
-      {
-        "percentile_band": "95th-99th percentile",
-        "exposure": 7
-      },
-      {
-        "percentile_band": "top 1%",
-        "exposure": 8
-      }
-    ]
-  },
   "rows": [
     {
       "slug": "judges-and-hearing-officers",
@@ -3477,5 +3438,62 @@
       "new_exposure": 8,
       "new_rationale": "Mapped from Microsoft's AI applicability score for Historians (0.462). That lands in the top 1% of Microsoft's occupation scores, so it is conservatively mapped to 8/10 here rather than treated as a full job-replacement claim."
     }
-  ]
+  ],
+  "methodology": {
+    "source_metric": "Microsoft AI applicability score",
+    "mapping": "Scores are mapped into JobOrBot's replaceability scale using conservative percentile bands from Microsoft's occupation-score distribution rather than linear max-normalization.",
+    "note": "Because the Microsoft source measures AI usefulness within occupational tasks, not end-to-end job replacement, this variant intentionally tops out at 8/10 rather than claiming any occupation is fully replaceable today.",
+    "target_scale": {
+      "name": "JobOrBot replaceability scale",
+      "question": "How close is AI to being able to do the whole occupation today, rather than only assist with parts of it?",
+      "anchors": [
+        {
+          "score": 1,
+          "meaning": "AI is barely useful for doing the real job today."
+        },
+        {
+          "score": 5,
+          "meaning": "AI is materially useful across substantial parts of the job, but still far from replacing it."
+        },
+        {
+          "score": 10,
+          "meaning": "AI can effectively do the whole job today with minimal human help."
+        }
+      ]
+    },
+    "bands": [
+      {
+        "percentile_band": "bottom 10%",
+        "exposure": 1
+      },
+      {
+        "percentile_band": "10th-25th percentile",
+        "exposure": 2
+      },
+      {
+        "percentile_band": "25th-45th percentile",
+        "exposure": 3
+      },
+      {
+        "percentile_band": "45th-70th percentile",
+        "exposure": 4
+      },
+      {
+        "percentile_band": "70th-85th percentile",
+        "exposure": 5
+      },
+      {
+        "percentile_band": "85th-95th percentile",
+        "exposure": 6
+      },
+      {
+        "percentile_band": "95th-99th percentile",
+        "exposure": 7
+      },
+      {
+        "percentile_band": "top 1%",
+        "exposure": 8
+      }
+    ]
+  }
 }

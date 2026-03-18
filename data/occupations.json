@@ -3434,5 +3434,28 @@
       "new_exposure": 7,
       "new_rationale": "The core output of a historian—written analysis, reports, and digital exhibits—is highly susceptible to AI generation, as these are primarily digital artifacts. However, the role retains significant human necessity due to the requirement for original interpretive synthesis, the curation of physical artifacts, and the need for human authority in establishing historical narratives and institutional trust."
     }
-  ]
+  ],
+  "methodology": {
+    "source_metric": "JobOrBot editorial replaceability judgment",
+    "mapping": "This dataset scores occupations directly against JobOrBot's shared replaceability rubric rather than translating an outside research metric.",
+    "note": "It is the site's own baseline model, intended to answer the same whole-job replaceability question users answer on the rating card.",
+    "target_scale": {
+      "name": "JobOrBot replaceability scale",
+      "question": "How close is AI to being able to do the whole occupation today, rather than only assist with parts of it?",
+      "anchors": [
+        {
+          "score": 1,
+          "meaning": "AI is barely useful for doing the real job today."
+        },
+        {
+          "score": 5,
+          "meaning": "AI is materially useful across substantial parts of the job, but still far from replacing it."
+        },
+        {
+          "score": 10,
+          "meaning": "AI can effectively do the whole job today with minimal human help."
+        }
+      ]
+    }
+  }
 }

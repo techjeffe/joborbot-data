@@ -3434,5 +3434,28 @@
       "new_exposure": 7,
       "new_rationale": "Historians perform high-level knowledge work—researching, analyzing, and writing—that is increasingly digital and highly susceptible to AI-driven efficiency gains in document processing and synthesis. While the job requires human judgment and physical interaction with artifacts or archives, the core output of reports and articles faces significant restructuring as AI tools become capable of parsing vast historical datasets and drafting complex narratives."
     }
-  ]
+  ],
+  "methodology": {
+    "source_metric": "Karpathy jobs scores.json occupation scores",
+    "mapping": "This dataset preserves the original Karpathy occupation rankings as a historical comparison track and presents them on JobOrBot's shared replaceability scale.",
+    "note": "Use it as a baseline for comparison rather than as a direct statement about current end-to-end job replacement capability.",
+    "target_scale": {
+      "name": "JobOrBot replaceability scale",
+      "question": "How close is AI to being able to do the whole occupation today, rather than only assist with parts of it?",
+      "anchors": [
+        {
+          "score": 1,
+          "meaning": "AI is barely useful for doing the real job today."
+        },
+        {
+          "score": 5,
+          "meaning": "AI is materially useful across substantial parts of the job, but still far from replacing it."
+        },
+        {
+          "score": 10,
+          "meaning": "AI can effectively do the whole job today with minimal human help."
+        }
+      ]
+    }
+  }
 }
