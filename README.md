@@ -4,7 +4,7 @@ Public Data repo for the [JobOrBot.com](https://joborbot.com) website.
 
 ## Overview
 
-This repository contains JSON datasets used by JobOrBot to assess AI exposure across occupations. Each dataset contains the same 342 occupations but with different AI exposure scores and rationales from distinct source methodologies.
+This repository contains JSON datasets used by JobOrBot to assess AI exposure across occupations. Each dataset contains the same 342 occupations but with different AI exposure scores and rationales from distinct source methodologies (5 datasets total).
 
 ## Data Files
 
@@ -47,6 +47,18 @@ AI exposure scores mapped from Microsoft's AI applicability scores for SOC codes
 - [SOC AI applicability scores CSV](https://github.com/microsoft/working-with-ai/blob/main/soc_ai_applicability_scores.csv)
 - [Working with AI paper (arXiv)](https://arxiv.org/abs/2507.07935)
 
+### `Data/yale_tbl_v1.json`
+**Yale Budget Lab variant** (342 rows, ~368 KB)
+
+AI exposure scores from Yale Budget Lab's PCA-weighted consensus score, aggregating six AI exposure metrics crosswalked to SOC 2018.
+
+**Sources:**
+- [Labor Market AI Exposure: What Do We Know?](https://budgetlab.yale.edu/research/labor-market-ai-exposure-what-do-we-know) — Gimbel, Kendall, Kulsakdinun (The Budget Lab at Yale)
+- [TBL AI Exposure Data Download](https://budgetlab.yale.edu/sites/default/files/2026-02/TBL-Data-AI-Exposure-What-do-we-know-202602-Updated.xlsx)
+- [Budget-Lab-Yale/AI-Employment-Model](https://github.com/Budget-Lab-Yale/AI-Employment-Model)
+
+**Note:** Uses a 1–9 replaceability scale (capped at 9, not 10) since TBL measures task overlap and exposure, not end-to-end job replacement. Includes a `methodology` section with detailed scoring bands and cross-metric variance notes.
+
 ### `Data/manifest.json`
 Auto-generated manifest listing all data files with row counts and file sizes.
 
@@ -74,10 +86,12 @@ Each dataset file follows the same structure:
 ```
 
 Each row represents one occupation with:
+
+**Note:** `yale_tbl_v1.json` also includes a `methodology` field with detailed scoring bands and cross-metric variance notes.
 - **slug** — URL-friendly identifier
 - **title** — Full occupation title
 - **category / category_label** — BLS category classification
 - **jobs** — Employment number (from BLS)
 - **url** — Link to the BLS Occupational Outlook Handbook page
-- **new_exposure** — AI exposure score (1–10 scale, higher = more exposed)
+- **new_exposure** — AI exposure score (1–10 scale for most datasets; Yale uses 1–9, higher = more exposed)
 - **new_rationale** — Narrative explanation for the score
