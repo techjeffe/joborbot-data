@@ -7,5 +7,6 @@ Files:
 - `karpathy_jobs_v1.json` - Karpathy Jobs variant (342 rows)
 - `anthropic_v1.json` - Anthropic variant (342 rows)
 - `microsoft_ai_v1.json` - Microsoft AI variant (342 rows)
+- `yale_tbl_v1.json` - Yale Budget Lab variant (342 rows, ~368 KB)
 
 This directory is meant to live in the public `joborbot-data` repository.
